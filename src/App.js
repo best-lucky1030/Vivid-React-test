@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 function App() {
@@ -8,14 +7,14 @@ function App() {
   const [secondTextWords, setSecondTextWords] = React.useState(0)
   const [compareResult, setCompareResult] = React.useState(true)
   const handleFirstText =(value) => {
-setFirstText(value)
-setFirstTextWords(value.split(' ').length)
-setCompareResult(value ===secondText)
-  }
-  const handleSecondText =(value) => {
-setSecondText(value)
-setSecondTextWords(value.split(' ').length)
-setCompareResult(value ===firstText)
+    setFirstText(value)
+    setFirstTextWords(value.split(' ').length)
+    setCompareResult(value ===secondText)
+      }
+      const handleSecondText =(value) => {
+    setSecondText(value)
+    setSecondTextWords(value.split(' ').length)
+    setCompareResult(value ===firstText)
   }
   return (
     <div className="App">
@@ -23,25 +22,23 @@ setCompareResult(value ===firstText)
         <div className='content'>
           <div>
             <textarea value={firstText} onChange={(e) =>handleFirstText(e.target.value)}>
-
             </textarea>
             <p>
-{firstTextWords}
+              {firstTextWords}
             </p>
           </div>
           <div>
-          <textarea value={secondText} onChange={(e) =>handleSecondText(e.target.value)}>
-</textarea>
-<p>
-{secondTextWords}
-
-  </p> 
-           </div>
+            <textarea value={secondText} onChange={(e) =>handleSecondText(e.target.value)}>
+            </textarea>
+            <p>
+              {secondTextWords}
+            </p> 
+          </div>
           
         </div>
         <p>
-            {compareResult?"Same":"Different"}
-          </p>
+          {compareResult?"Same":"Different"}
+        </p>
       </header>
     </div>
   );
